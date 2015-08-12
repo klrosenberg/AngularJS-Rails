@@ -14,7 +14,10 @@
 <!-- Calling the addPost() function with the ng-submit directive -->
 <!-- ng-submit has the function of allowing the user to press enter to submit -->
     <form ng-submit="addPost()">
-      <input type="text" ng-model="title"></input>
+      <input type="text" placeholder="Title" ng-model="title"></input>
+      <br>
+      <input type="text" placeholder="Link" ng-model="link"></input>
+      <br>
       <button ng-click="addPost()">Post</button>
     </form>
   </body>
