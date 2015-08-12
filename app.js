@@ -11,8 +11,10 @@ function($scope){
     {title: 'post 5', upvotes: 4}
   ]
   
+  // addPost function retrieves the title entered in the form which is bound to the $scope variable 'title'
   $scope.addPost = function(){
     $scope.posts.push({title: 'A new post!', upvotes: 0});
+    $scope.title = '';
   };
 }]);
 

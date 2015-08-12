@@ -5,10 +5,13 @@
     <script src="app.js"></script>
   </head>
   <body ng-app="flapperNews" ng-controller="MainCtrl">
+<!-- Listing through the posts by repeating, descending order of upvotes -->
     <div ng-repeat="post in posts | orderBy: '-upvotes'">
       {{post.title}} - upvotes: {{post.upvotes}}
     </div>
     
+<!-- Calling the addPost() function with the ng-submit directive -->
+<!-- ng-submit has the function of allowing the user to press enter to submit -->
     <form ng-submit="addPost()">
       <input type="text" ng-model="title"></input>
       <button ng-click="addPost()">Post</button>
