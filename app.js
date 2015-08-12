@@ -29,4 +29,7 @@ function($scope){
   };
 }]);
 
+.factory('posts', [function(){
+  
+}])
 
