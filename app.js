@@ -15,8 +15,12 @@ function($scope){
   $scope.addPost = function(){
     // doesn't allow user to submit a blank post
     if(!$scope.title || $scope.title === '') { return; }
-    $scope.posts.push({title: $scope.title, upvotes: 0});
+    $scope.posts.push({
+      title: $scope.title,
+      link: $scope.link, 
+      upvotes: 0});
       $scope.title = '';
+      $scope.link = '';
     };
     
   // function to upvote a post  
