@@ -19,9 +19,10 @@ function($scope){
       $scope.title = '';
     };
     
-    $scope.incrementUpvotes = function(post) {
-      post.upvotes += 1;
-    };
+  // function to upvote a post  
+  $scope.incrementUpvotes = function(post) {
+    post.upvotes += 1;
+  };
 }]);
 
 
