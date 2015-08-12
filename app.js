@@ -1,4 +1,8 @@
 angular.module('flapperNews', [])
+.factory('posts', [function(){
+  
+}])
+
 .controller('MainCtrl', [
 '$scope',
 function($scope){
@@ -28,8 +32,4 @@ function($scope){
     post.upvotes += 1;
   };
 }]);
-
-.factory('posts', [function(){
-  
-}])
 
