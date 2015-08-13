@@ -22,10 +22,19 @@ angular.module('flapperNews', ['ui.router'])
 }])
 
 .state('posts', {
+  // id in brackets- route parameter made available in controller
   url: '/posts/{id}',
   templateUrl: '/posts.html',
   controller: 'PostsCtrl'
 });
+
+.controller('PostsCtrl', [
+  '$scope',
+  '$stateParams',
+  'posts',
+  function($scope, $stateParams, posts){
+    
+}]);
 
 .controller('MainCtrl', [
   '$scope',
