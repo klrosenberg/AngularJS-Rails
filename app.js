@@ -10,23 +10,25 @@ angular.module('flapperNews', ['ui.router'])
       templateUrl: '/home.html',
       controller: 'MainCtrl'
     });
+    
+    $stateProvider
+    .state('posts', {
+      // id in brackets- route parameter made available in controller
+      url: '/posts/{id}',
+      templateUrl: '/posts.html',
+      controller: 'PostsCtrl'
+    });
+    
     $urlRouterProvider.otherwise('home');
 }])
 
 .factory('posts', [function(){
   // create new object that has an array 'posts'
-  var = o {
+  var o = {
     posts: []
   };
   return o
 }])
-
-.state('posts', {
-  // id in brackets- route parameter made available in controller
-  url: '/posts/{id}',
-  templateUrl: '/posts.html',
-  controller: 'PostsCtrl'
-});
 
 .controller('PostsCtrl', [
   '$scope',
@@ -35,13 +37,14 @@ angular.module('flapperNews', ['ui.router'])
   function($scope, $stateParams, posts){
     // scope object grabs appropriate post from posts service using $stateParams id
     $scope.post = posts.posts[$stateParams.id];
-}]);
+    // DON'T PUT A ';' IF HAS A 3 BRACKET CLOSURE ON CTRL. SERIOUSLY.
+}])
 
 .controller('MainCtrl', [
   '$scope',
   // inject factory service into controller to access data
   'posts',
-  function($scope){
+  function($scope, posts){
     // $scope variable serves as the bridge between Angular controllers and templates.
     // bind $scope.posts variable to post array in the service 
     $scope.posts = posts.posts;
@@ -53,7 +56,7 @@ angular.module('flapperNews', ['ui.router'])
       $scope.posts.push({
         title: $scope.title,
         link: $scope.link, 
-        upvotes: 0
+        upvotes: 0,
         comments: [
           {author: 'Joe', body: 'Cool post!', upvotes: 0},
           {author: 'Bob', body: 'Great idea but everything is wrong!', upvotes: 0}
