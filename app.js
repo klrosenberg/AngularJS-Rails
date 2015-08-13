@@ -1,4 +1,4 @@
-angular.module('flapperNews', [])
+angular.module('flapperNews', ['ui.router'])
 .factory('posts', [function(){
   // create new object that has an array 'posts'
   var = o {
