@@ -38,6 +38,16 @@ angular.module('flapperNews', ['ui.router'])
   function($scope, $stateParams, posts){
     // scope object grabs appropriate post from posts service using $stateParams id
     $scope.post = posts.posts[$stateParams.id];
+    
+    $scope.addComment = function(){
+      if($scope.body === '') { return; }
+      $scope.post.comments.push({
+        body: $scope.body,
+        author: 'user',
+        upvotes: 0
+      });
+      $scope.body = '';
+    }
     // DON'T PUT A ';' IF HAS A 3 BRACKET CLOSURE ON CTRL.
 }])
 
