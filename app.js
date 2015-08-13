@@ -12,6 +12,7 @@ angular.module('flapperNews', ['ui.router'])
     });
     $urlRouterProvider.otherwise('home');
 }])
+
 .factory('posts', [function(){
   // create new object that has an array 'posts'
   var = o {
@@ -19,6 +20,12 @@ angular.module('flapperNews', ['ui.router'])
   };
   return o
 }])
+
+.state('posts', {
+  url: '/posts/{id}',
+  templateUrl: '/posts.html',
+  controller: 'PostsCtrl'
+});
 
 .controller('MainCtrl', [
   '$scope',
