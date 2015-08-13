@@ -33,6 +33,7 @@ angular.module('flapperNews', ['ui.router'])
   '$stateParams',
   'posts',
   function($scope, $stateParams, posts){
+    // scope object grabs appropriate post from posts service using $stateParams id
     $scope.post = posts.posts[$stateParams.id];
 }]);
 
