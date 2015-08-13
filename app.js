@@ -7,7 +7,7 @@ angular.module('flapperNews', ['ui.router'])
     // configure a home state
     $stateProvider
     .state('home', {
-      url: 'home',
+      url: '/home',
       templateUrl: '/home.html',
       controller: 'MainCtrl'
     });
@@ -38,7 +38,7 @@ angular.module('flapperNews', ['ui.router'])
   function($scope, $stateParams, posts){
     // scope object grabs appropriate post from posts service using $stateParams id
     $scope.post = posts.posts[$stateParams.id];
-    // DON'T PUT A ';' IF HAS A 3 BRACKET CLOSURE ON CTRL. SERIOUSLY.
+    // DON'T PUT A ';' IF HAS A 3 BRACKET CLOSURE ON CTRL.
 }])
 
 .controller('MainCtrl', [
