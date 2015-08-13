@@ -1,5 +1,6 @@
 angular.module('flapperNews', [])
 .factory('posts', [function(){
+  // create new object that has an array 'posts'
   var = o {
     posts: []
   };
@@ -8,15 +9,12 @@ angular.module('flapperNews', [])
 
 .controller('MainCtrl', [
 '$scope',
+// inject factory service into controller to access data
+'posts',
 function($scope){
-  // $scope variable serves as the bridge between Angular controllers and templates. 
-  $scope.posts = [
-    {title: 'post 1', upvotes: 5},
-    {title: 'post 2', upvotes: 2},
-    {title: 'post 3', upvotes: 15},
-    {title: 'post 4', upvotes: 9},
-    {title: 'post 5', upvotes: 4}
-  ]
+  // $scope variable serves as the bridge between Angular controllers and templates.
+  // bind $scope.posts variable to post array in the service 
+  $scope.posts = posts.posts;
   
   // addPost function retrieves the title entered in the form which is bound to the $scope variable 'title'
   $scope.addPost = function(){
