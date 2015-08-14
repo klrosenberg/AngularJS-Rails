@@ -6,6 +6,4 @@ class ApplicationController < ActionController::Base
   def angular
     render 'layouts/application'
   end
-  
-  root to: 'application#angular'
 end
